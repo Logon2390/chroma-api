@@ -19,7 +19,7 @@ app.add_middleware(
     allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["GET", "POST", "DELETE"],  
-    allow_headers=["Content-Type", "application/pdf", "application/docx", "application/txt"],
+    allow_headers=["*"],
 )
 
 # Include API routes

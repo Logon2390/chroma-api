@@ -2,8 +2,8 @@ import uuid
 from typing import List, Dict, Any, Optional
 from pathlib import Path
 
-from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_chroma import Chroma
+from langchain_huggingface import HuggingFaceEmbeddings
 
 from app.core.config import CHROMA_DB_DIR, EMBEDDING_MODEL
 from app.models.schemas import DocumentMetadata, DocumentChunk, VectorStoreResponse, FileType

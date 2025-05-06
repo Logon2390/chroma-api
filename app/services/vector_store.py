@@ -1,4 +1,3 @@
-import os
 import uuid
 from typing import List, Dict, Any, Optional
 from pathlib import Path
@@ -7,7 +6,7 @@ from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
 
 from app.core.config import CHROMA_DB_DIR, EMBEDDING_MODEL
-from app.models.schemas import DocumentMetadata, DocumentChunk, VectorStoreResponse
+from app.models.schemas import DocumentMetadata, DocumentChunk, VectorStoreResponse, FileType
 
 
 class VectorStore:
@@ -51,10 +50,49 @@ class VectorStore:
             # Generate a unique ID for the document
             doc_id = str(uuid.uuid4())
             
-            # Add document to vector store
+            # Validate and format metadata to match DocumentMetadata schema
+            if not isinstance(metadata.get("file_type"), FileType) and isinstance(metadata.get("file_type"), str):
+                # Convert string to FileType enum if needed
+                metadata["file_type"] = FileType(metadata["file_type"].lower())
+                
+            # Ensure content_length is present
+            if "content_length" not in metadata:
+                metadata["content_length"] = len(text)
+                
+            # Ensure required fields are present
+            required_fields = ["filename", "file_type", "content_length", "upload_timestamp"]
+            for field in required_fields:
+                if field not in metadata:
+                    raise ValueError(f"Required metadata field '{field}' is missing")
+            
+            # Prepare a flattened version of metadata for Chroma
+            # Chroma only accepts simple types (str, int, float, bool)
+            chroma_metadata = {}
+            
+            # Add standard fields
+            chroma_metadata["doc_id"] = doc_id
+            chroma_metadata["filename"] = metadata["filename"]
+            chroma_metadata["content_length"] = metadata["content_length"]
+            chroma_metadata["upload_timestamp"] = metadata["upload_timestamp"]
+            
+            # Handle file_type - convert enum to string
+            if isinstance(metadata["file_type"], FileType):
+                chroma_metadata["file_type"] = metadata["file_type"].value
+            else:
+                chroma_metadata["file_type"] = str(metadata["file_type"])
+            
+            # Add any additional simple metadata fields
+            # We'll skip nested dictionaries and complex objects
+            if "additional_metadata" in metadata and isinstance(metadata["additional_metadata"], dict):
+                for key, value in metadata["additional_metadata"].items():
+                    # Only include simple types
+                    if isinstance(value, (str, int, float, bool)):
+                        chroma_metadata[key] = value
+            
+            # Add document to vector store with simplified metadata
             self.db.add_texts(
                 texts=[text],
-                metadatas=[{**metadata, "doc_id": doc_id}],
+                metadatas=[chroma_metadata],
                 ids=[doc_id]
             )
             
@@ -89,11 +127,31 @@ class VectorStore:
             metadata = doc.metadata
             doc_id = metadata.get("doc_id", str(uuid.uuid4()))
             
+            # Ensure file_type is a proper FileType enum
+            file_type = metadata.get("file_type")
+            if isinstance(file_type, str):
+                try:
+                    file_type = FileType(file_type.lower())
+                except ValueError:
+                    # Default to TXT if invalid
+                    file_type = FileType.TXT
+            elif not isinstance(file_type, FileType):
+                file_type = FileType.TXT
+            
+            # Format metadata to match DocumentMetadata schema
+            document_metadata = DocumentMetadata(
+                filename=metadata.get("filename", "unknown.txt"),
+                file_type=file_type,
+                content_length=metadata.get("content_length", len(doc.page_content)),
+                upload_timestamp=metadata.get("upload_timestamp", ""),
+                additional_metadata=metadata
+            )
+            
             # Create document chunk
             chunk = DocumentChunk(
                 id=doc_id,
                 text=doc.page_content,
-                metadata=metadata,
+                metadata=document_metadata,
                 embedding_id=doc_id
             )
             
@@ -144,10 +202,30 @@ class VectorStore:
         for doc in results:
             metadata = doc.metadata
             if metadata.get("doc_id") == doc_id:
+                # Ensure file_type is a proper FileType enum
+                file_type = metadata.get("file_type")
+                if isinstance(file_type, str):
+                    try:
+                        file_type = FileType(file_type.lower())
+                    except ValueError:
+                        # Default to TXT if invalid
+                        file_type = FileType.TXT
+                elif not isinstance(file_type, FileType):
+                    file_type = FileType.TXT
+                
+                # Format metadata to match DocumentMetadata schema
+                document_metadata = DocumentMetadata(
+                    filename=metadata.get("filename", "unknown.txt"),
+                    file_type=file_type,
+                    content_length=metadata.get("content_length", len(doc.page_content)),
+                    upload_timestamp=metadata.get("upload_timestamp", ""),
+                    additional_metadata=metadata
+                )
+                
                 return DocumentChunk(
                     id=doc_id,
                     text=doc.page_content,
-                    metadata=metadata,
+                    metadata=document_metadata,
                     embedding_id=doc_id
                 )
         

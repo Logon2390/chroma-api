@@ -1,13 +1,11 @@
-import os
-import shutil
 from datetime import datetime
 from pathlib import Path
-from typing import List, Dict, Any, Optional
+from typing import List, Optional
 
 from fastapi import UploadFile, HTTPException
 
 from app.core.config import UPLOAD_DIR, MAX_FILE_SIZE
-from app.models.schemas import FileType, UploadResponse
+from app.models.schemas import FileType, UploadResponse, DocumentMetadata
 from app.services.extractors.base import BaseExtractor
 from app.services.extractors.pdf_extractor import PDFExtractor
 from app.services.extractors.docx_extractor import DocxExtractor
@@ -109,8 +107,22 @@ class FileProcessor:
         
         # Save file to disk
         file_path = self.upload_dir / upload_file.filename
-        with open(file_path, "wb") as buffer:
-            shutil.copyfileobj(upload_file.file, buffer)
+        
+        try:
+            # Reset file position
+            await upload_file.seek(0)
+            
+            with open(file_path, "wb") as buffer:
+                # Read content from the upload file
+                content = await upload_file.read()
+                
+                # Write content to the destination file
+                buffer.write(content)
+        except Exception as e:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Error saving file: {str(e)}"
+            )
         
         try:
             # Extract text and metadata
@@ -120,8 +132,17 @@ class FileProcessor:
             # Add a timestamp
             metadata["upload_timestamp"] = datetime.now().isoformat()
             
+            # Ensure metadata has the required fields for DocumentMetadata model
+            formatted_metadata = {
+                "filename": upload_file.filename,
+                "file_type": file_type,  # This is already a FileType enum with correct case
+                "content_length": len(text_content),
+                "upload_timestamp": metadata["upload_timestamp"],
+                "additional_metadata": metadata  # Include original metadata as additional_metadata
+            }
+            
             # Store in vector database
-            vector_response = self.vector_store.add_document(text_content, metadata)
+            vector_response = self.vector_store.add_document(text_content, formatted_metadata)
             
             if not vector_response.success:
                 raise HTTPException(
@@ -132,7 +153,7 @@ class FileProcessor:
             # Create response
             vector_id = vector_response.document_ids[0] if vector_response.document_ids else ""
             
-            return UploadResponse(
+            response = UploadResponse(
                 filename=upload_file.filename,
                 file_type=file_type,
                 content_length=len(text_content),
@@ -140,6 +161,7 @@ class FileProcessor:
                 success=True,
                 message="File processed and stored successfully"
             )
+            return response
         
         except Exception as e:
             # Handle errors

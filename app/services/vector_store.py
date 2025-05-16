@@ -36,70 +36,60 @@ class VectorStore:
             persist_directory=str(self.db_path)
         )
     
-    def add_document(self, text: str, metadata: Dict[str, Any]) -> VectorStoreResponse:
+    def add_document(self, chunks: List[DocumentChunk], metadata: Dict[str, Any]) -> VectorStoreResponse:
         """Add a document to the vector store.
         
+        The document chunks will be stored in the vector database.
+        
         Args:
-            text: The text content of the document to add.
+            chunks: A list of DocumentChunk objects.
             metadata: Metadata associated with the document.
             
         Returns:
             A VectorStoreResponse containing the result of the operation.
         """
         try:
-            # Generate a unique ID for the document
-            doc_id = str(uuid.uuid4())
+            # Validate metadata
+            if "filename" not in metadata:
+                raise ValueError("Required metadata field 'filename' is missing")
             
-            # Validate and format metadata to match DocumentMetadata schema
-            if not isinstance(metadata.get("file_type"), FileType) and isinstance(metadata.get("file_type"), str):
-                # Convert string to FileType enum if needed
-                metadata["file_type"] = FileType(metadata["file_type"].lower())
+            # Store all chunks in the vector database
+            texts = []
+            metadatas = []
+            ids = []
+            
+            for chunk in chunks:
+                # Prepare metadata for Chroma (flatten it)
+                chroma_metadata = {
+                    "doc_id": chunk.id,
+                    "filename": chunk.metadata.filename,
+                    "content_length": len(chunk.text),
+                    "upload_timestamp": chunk.metadata.upload_timestamp,
+                    "file_type": chunk.metadata.file_type.value
+                }
                 
-            # Ensure content_length is present
-            if "content_length" not in metadata:
-                metadata["content_length"] = len(text)
+                # Add any additional simple metadata fields
+                if chunk.metadata.additional_metadata:
+                    for key, value in chunk.metadata.additional_metadata.items():
+                        # Only include simple types
+                        if isinstance(value, (str, int, float, bool)):
+                            chroma_metadata[key] = value
                 
-            # Ensure required fields are present
-            required_fields = ["filename", "file_type", "content_length", "upload_timestamp"]
-            for field in required_fields:
-                if field not in metadata:
-                    raise ValueError(f"Required metadata field '{field}' is missing")
+                texts.append(chunk.text)
+                metadatas.append(chroma_metadata)
+                ids.append(chunk.id)
             
-            # Prepare a flattened version of metadata for Chroma
-            # Chroma only accepts simple types (str, int, float, bool)
-            chroma_metadata = {}
-            
-            # Add standard fields
-            chroma_metadata["doc_id"] = doc_id
-            chroma_metadata["filename"] = metadata["filename"]
-            chroma_metadata["content_length"] = metadata["content_length"]
-            chroma_metadata["upload_timestamp"] = metadata["upload_timestamp"]
-            
-            # Handle file_type - convert enum to string
-            if isinstance(metadata["file_type"], FileType):
-                chroma_metadata["file_type"] = metadata["file_type"].value
-            else:
-                chroma_metadata["file_type"] = str(metadata["file_type"])
-            
-            # Add any additional simple metadata fields
-            # We'll skip nested dictionaries and complex objects
-            if "additional_metadata" in metadata and isinstance(metadata["additional_metadata"], dict):
-                for key, value in metadata["additional_metadata"].items():
-                    # Only include simple types
-                    if isinstance(value, (str, int, float, bool)):
-                        chroma_metadata[key] = value
-            
-            # Add document to vector store with simplified metadata
+            # Add all chunks to vector store
             self.db.add_texts(
-                texts=[text],
-                metadatas=[chroma_metadata],
-                ids=[doc_id]
+                texts=texts,
+                metadatas=metadatas,
+                ids=ids
             )
             
             return VectorStoreResponse(
                 success=True,
-                message="Document added successfully",
-                document_ids=[doc_id]
+                message=f"Document added successfully and split into {len(chunks)} chunks",
+                document_ids=[chunk.id for chunk in chunks]
             )
         except Exception as e:
             return VectorStoreResponse(

@@ -11,7 +11,7 @@ from app.services.extractors.pdf_extractor import PDFExtractor
 from app.services.extractors.docx_extractor import DocxExtractor
 from app.services.extractors.txt_extractor import TxtExtractor
 from app.services.vector_store import VectorStore
-
+from app.services.chunk_processor import ChunkProcessor
 
 class FileProcessor:
     """Handles file processing, extraction, and storage.
@@ -34,6 +34,9 @@ class FileProcessor:
         
         # Initialize vector store
         self.vector_store = VectorStore()
+
+         # Initialize text chunking service
+        self.chunk_processor = ChunkProcessor()
     
     def _get_file_type(self, filename: str) -> Optional[FileType]:
         """Determine the file type from the filename.
@@ -140,9 +143,12 @@ class FileProcessor:
                 "upload_timestamp": metadata["upload_timestamp"],
                 "additional_metadata": metadata  # Include original metadata as additional_metadata
             }
+
+            # Split text into chunks
+            document_chunks = self.chunk_processor.split_text_into_chunks(text_content, formatted_metadata)
             
-            # Store in vector database
-            vector_response = self.vector_store.add_document(text_content, formatted_metadata)
+            # Store chunks in vector database
+            vector_response = self.vector_store.add_document(document_chunks, formatted_metadata)
             
             if not vector_response.success:
                 raise HTTPException(

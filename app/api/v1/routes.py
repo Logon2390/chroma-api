@@ -33,7 +33,6 @@ async def upload_file(
     Returns:
         Information about the processed file.
     """
-    print("Uploading file...")
     return await file_processor.process_upload(file)
 
 

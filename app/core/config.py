@@ -13,6 +13,8 @@ API_PORT = int(os.getenv("API_PORT", "8000"))
 # File Processing
 UPLOAD_DIR = Path(os.getenv("UPLOAD_DIR", "./uploads"))
 MAX_FILE_SIZE = int(os.getenv("MAX_FILE_SIZE", "10485760"))  # Default: 10MB
+CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "250"))
+CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "50"))
 
 # Create uploads directory if it doesn't exist
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)

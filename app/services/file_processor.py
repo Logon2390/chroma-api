@@ -12,7 +12,7 @@ from app.services.extractors.docx_extractor import DocxExtractor
 from app.services.extractors.txt_extractor import TxtExtractor
 from app.services.vector_store import VectorStore
 from app.services.chunk_processor import ChunkProcessor
-
+import httpx
 class FileProcessor:
     """Handles file processing, extraction, and storage.
     
@@ -24,7 +24,8 @@ class FileProcessor:
         """Initialize the file processor."""
         self.upload_dir = Path(UPLOAD_DIR)
         self.upload_dir.mkdir(parents=True, exist_ok=True)
-        
+        self.chunk_processor = ChunkProcessor()
+        self.api_endpoint = "http://localhost:9000/api/v1/store"
         # Initialize extractors
         self.extractors: List[BaseExtractor] = [
             PDFExtractor(),
@@ -72,6 +73,40 @@ class FileProcessor:
                 return extractor
         
         return None
+    
+    async def send_chunks_to_external_api(self, chunks: List["DocumentChunk"], metadata: dict):
+        """Send document chunks to external API.
+        Args:
+            chunks: List of DocumentChunk objects.
+            metadata: Document metadata.
+        Returns:
+            The API response.
+        Raises:
+            HTTPException: If the API call fails.
+        """
+        try:
+            chunks_dict = [chunk.model_dump() for chunk in chunks]
+            payload = {
+                "chunks": chunks_dict,
+                "metadata": metadata
+            }
+            async with httpx.AsyncClient() as client:
+                response = await client.post(
+                    self.api_endpoint,
+                    json=payload,
+                    timeout=30.0
+                )
+            if response.status_code != 200:
+                raise HTTPException(
+                    status_code=response.status_code,
+                    detail=f"External API error: {response.text}"
+                )
+            return response.json()
+        except httpx.RequestError as e:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Error connecting to external API: {str(e)}"
+            )
     
     async def process_upload(self, upload_file: UploadFile) -> UploadResponse:
         """Process an uploaded file.
@@ -147,6 +182,9 @@ class FileProcessor:
             # Split text into chunks
             document_chunks = self.chunk_processor.split_text_into_chunks(text_content, formatted_metadata)
             
+            # Enviar los chunks a la API externa
+            await self.send_chunks_to_external_api(document_chunks, formatted_metadata)
+
             # Store chunks in vector database
             vector_response = self.vector_store.add_document(document_chunks, formatted_metadata)
             

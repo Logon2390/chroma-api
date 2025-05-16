@@ -12,7 +12,7 @@ from app.services.extractors.docx_extractor import DocxExtractor
 from app.services.extractors.txt_extractor import TxtExtractor
 from app.services.vector_store import VectorStore
 from app.services.chunk_processor import ChunkProcessor
-
+from app.services.external_chunck_sender import ExternalChunkSender
 class FileProcessor:
     """Handles file processing, extraction, and storage.
     
@@ -24,7 +24,8 @@ class FileProcessor:
         """Initialize the file processor."""
         self.upload_dir = Path(UPLOAD_DIR)
         self.upload_dir.mkdir(parents=True, exist_ok=True)
-        
+        self.chunk_processor = ChunkProcessor()
+        self.chunk_sender = ExternalChunkSender("http://localhost:9000/api/v1/store")
         # Initialize extractors
         self.extractors: List[BaseExtractor] = [
             PDFExtractor(),
@@ -72,7 +73,6 @@ class FileProcessor:
                 return extractor
         
         return None
-    
     async def process_upload(self, upload_file: UploadFile) -> UploadResponse:
         """Process an uploaded file.
         
@@ -147,6 +147,8 @@ class FileProcessor:
             # Split text into chunks
             document_chunks = self.chunk_processor.split_text_into_chunks(text_content, formatted_metadata)
             
+            await self.chunk_sender.send_chunks(document_chunks, formatted_metadata)
+
             # Store chunks in vector database
             vector_response = self.vector_store.add_document(document_chunks, formatted_metadata)
             

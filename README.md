@@ -6,16 +6,12 @@ A FastAPI-based API for processing documents (PDF, DOCX, TXT) and storing their 
 
 - File upload endpoint for PDF, DOCX, and TXT files
 - Text extraction from uploaded documents
-- Storage of document content in ChromaDB vector database
-- Semantic search capabilities
-- Document retrieval and deletion
-- SOLID architecture principles
 - Extensible design for adding new document types
 
 ## Project Structure
 
 ```
-ai_vector_api/
+Chroma-api/
 │
 ├── app/
 │   ├── api/
@@ -45,8 +41,8 @@ ai_vector_api/
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
-cd ai-vector-api
+git clone <https://github.com/Logon2390/chroma-apil>
+cd chroma-api
 ```
 
 2. Create a virtual environment (optional but recommended):
@@ -74,13 +70,13 @@ API_PORT=8000
 # File Processing
 UPLOAD_DIR=./uploads
 MAX_FILE_SIZE=10485760  # 10MB in bytes
+CHUNK_SIZE=250
+CHUNK_OVERLAP=50
 
 # Vector Store
 CHROMA_DB_DIR=./chroma_db
 EMBEDDING_MODEL=all-MiniLM-L6-v2
 
-# Optional AI Provider Keys (if needed)
-# OPENAI_API_KEY=your_key_here
 ```
 
 ## Running the API

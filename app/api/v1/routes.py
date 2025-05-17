@@ -16,24 +16,28 @@ def get_vector_store():
     return VectorStore()
 
 
-@router.post("/upload", response_model=UploadResponse)
+@router.post("/upload", response_model=List[UploadResponse])
 async def upload_file(
-    file: UploadFile = File(...),
+    files: List[UploadFile] = File(...),
     file_processor: FileProcessor = Depends(get_file_processor)
 ):
-    """Upload a file to be processed and stored in the vector database.
+    """Upload multiple files to be processed and stored in the vector database.
     
-    The file will be processed to extract its text content, which will then
+    The files will be processed to extract their text content, which will then
     be vectorized and stored in the vector database.
     
     Args:
-        file: The file to upload (PDF, DOCX, or TXT).
+        files: List of files to upload (PDF, DOCX, or TXT).
         file_processor: The file processor service.
         
     Returns:
-        Information about the processed file.
+        List of information about each processed file.
     """
-    return await file_processor.process_upload(file)
+    responses = []
+    for file in files:
+        response = await file_processor.process_upload(file)
+        responses.append(response)
+    return responses
 
 
 @router.get("/documents/{doc_id}", response_model=DocumentChunk)

@@ -10,7 +10,6 @@ from app.services.extractors.base import BaseExtractor
 from app.services.extractors.pdf_extractor import PDFExtractor
 from app.services.extractors.docx_extractor import DocxExtractor
 from app.services.extractors.txt_extractor import TxtExtractor
-from app.services.vector_store import VectorStore
 from app.services.chunk_processor import ChunkProcessor
 from app.services.external_chunck_sender import ExternalChunkSender
 class FileProcessor:
@@ -32,9 +31,6 @@ class FileProcessor:
             DocxExtractor(),
             TxtExtractor()
         ]
-        
-        # Initialize vector store
-        self.vector_store = VectorStore()
 
          # Initialize text chunking service
         self.chunk_processor = ChunkProcessor()
@@ -138,38 +134,27 @@ class FileProcessor:
             # Ensure metadata has the required fields for DocumentMetadata model
             formatted_metadata = {
                 "filename": upload_file.filename,
-                "file_type": file_type,  # This is already a FileType enum with correct case
+                "file_type": file_type,
                 "content_length": len(text_content),
                 "upload_timestamp": metadata["upload_timestamp"],
-                "additional_metadata": metadata  # Include original metadata as additional_metadata
+                "additional_metadata": metadata
             }
 
             # Split text into chunks
             document_chunks = self.chunk_processor.split_text_into_chunks(text_content, formatted_metadata)
             
-            await self.chunk_sender.send_chunks(document_chunks, formatted_metadata)
-
-            # Store chunks in vector database
-            vector_response = self.vector_store.add_document(document_chunks, formatted_metadata)
+            # Send chunks to external API
+            response = await self.chunk_sender.send_chunks(document_chunks, formatted_metadata)
             
-            if not vector_response.success:
-                raise HTTPException(
-                    status_code=500,
-                    detail=f"Failed to store document in vector database: {vector_response.error}"
-                )
-            
-            # Create response
-            vector_id = vector_response.document_ids[0] if vector_response.document_ids else ""
-            
-            response = UploadResponse(
+            # Create and return the upload response
+            return UploadResponse(
                 filename=upload_file.filename,
                 file_type=file_type,
                 content_length=len(text_content),
-                vector_id=vector_id,
+                vector_id=response.get("vector_id", ""),  # Assuming the external API returns a vector_id
                 success=True,
                 message="File processed and stored successfully"
             )
-            return response
         
         except Exception as e:
             # Handle errors

@@ -42,8 +42,6 @@ class ChunkProcessor:
     
     
     def _split_by_headers(self, text: str, headers: List[str]) -> List[str]:
-        print("headers:")
-        print(headers)
         import re
         escaped_headers = [re.escape(h.strip()) for h in headers]
         pattern = re.compile(rf"^[ \t]*({'|'.join(escaped_headers)})", re.MULTILINE | re.IGNORECASE)
@@ -55,7 +53,6 @@ class ChunkProcessor:
             return [text.strip()]
 
         for i, match in enumerate(matches):
-            print(f"Match found: {match.group()}")
             start = match.start()
             end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
             chunk = text[start:end].strip()

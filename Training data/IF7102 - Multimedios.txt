@@ -1,0 +1,117 @@
+Curso:
+Código: IF7102
+Nombre completo: Multimedios
+Tipo de curso: Teórico-práctico
+Créditos: 3
+Horas lectivas por semana: 6
+Requisitos: IF5000 Redes y comunicaciones de datos, IF4100 Fundamentos de bases de datos
+Correquisitos: Ninguno
+Ubicación en el plan de estudios: VII Ciclo
+Suficiencia: No
+Tutoría: No
+Modalidad por sede y recinto:
+Sede Atlántico - Recinto Turrialba: Presencial
+Sede Caribe - Recinto Siquirres: Presencial
+Sede Guanacaste - Recinto Liberia: Presencial
+Sede Pacífico - Recinto Puntarenas: Alto virtual
+Sede Sur - Recinto Golfito: Virtual
+Descripción del curso:
+En el curso Multimedios el estudiantado y personal docente interactúan con el propósito general de que el estudiantado, con la guía del profesorado, aprenda a desarrollar aplicaciones con multimedios e hipermedios, ponga en práctica los conocimientos adquiridos a lo largo de su carrera y adquiera información, conocimientos y destrezas adicionales para ser aplicadas en otros ámbitos del desarrollo de software.
+Objetivo general:
+Fomentar en la persona estudiante las habilidades para utilizar los conocimientos de medios, multimedios, desarrollo web e interacción humano-computador para la resolución de problemas, aplicable posteriormente al campo de la informática.
+Objetivos específicos:
+- Comprender los principios fundamentales de la planificación, diseño, edición e integración de múltiples medios y recursos para crear una aplicación multimedios.
+- Canalizar información racional de manera sensorial y afectiva para facilitar la interacción del usuario con la aplicación.
+- Poner en práctica conocimientos de programación, ingeniería de software y los impartidos en el curso mediante el desarrollo de un proyecto.
+- Evaluar la calidad del trabajo propio y ajeno utilizando criterios de calidad que le permitan guiar y supervisar a otros.
+Contenidos del curso:
+Unidad de Planificación:
+1.1 Análisis de conceptos: medios, multimedios, hipermedios, hipertexto, navegación, interfaz, diseño centrado en el usuario, interactividad, entre otros.
+1.2 Aspectos de comunicación: semiótica, sintaxis, semántica, narrativa audiovisual, intencionalidad, percepción, representación, etc.
+1.3 Relación humano-máquina: interfaz de usuario, diseño centrado en el usuario, manipulación directa, evaluación y rediseño.
+1.4 Percepción y cognición: representación del conocimiento, memoria, carga cognitiva, atención.
+1.5 Diseño de interfaces: diseño gráfico, lenguaje visual, uso del color.
+1.6 Diseño de interactividad: estructura, navegación, guión, storyboard, modelos de construcción.
+1.7 Facilidad de uso (usability): criterios para evaluar calidad de aplicaciones.
+Unidad de Producción:
+2.1 Procesamiento de imágenes: gráficos, formatos, edición, mapas sensibles.
+2.2 Edición de sonido: captura, edición, formatos.
+2.3 Animaciones: 2D, formatos.
+2.4 Edición de video: edición no lineal, formatos.
+2.5 Modelación 3D: modelado, renderizado, exportación.
+Unidad de Desarrollo:
+3.1 Integración de medios mediante herramientas de autor. Acceso a datos por XML y JSON. Evaluación de ejemplos comerciales.
+Metodología:
+El personal docente actúa como guía, mientras que el estudiantado debe asumir un rol activo. Se promueve la investigación por parte del estudiante. La modalidad del curso depende de las unidades académicas. Se utiliza Mediación Virtual y Teams como plataformas oficiales, complementadas con otras como correo institucional, WhatsApp, Telegram, Zoom, etc.
+Evaluación:
+Proyecto final: 30%
+Proyecto de investigación: 20%
+Proyecto personal: 15%
+Proyecto de investigación personal: 10%
+Laboratorios: 15%
+Tareas y quices: 10%
+Consideraciones sobre la evaluación:
+- Se utiliza Mediación Virtual como entorno de aprendizaje institucional.
+- El correo institucional es el canal oficial de comunicación.
+- Los criterios de calificación serán indicados en cada enunciado.
+- Las evaluaciones se comunicarán al menos 5 días hábiles antes, excepto quices.
+- En caso de ausencia, se aplicará el Reglamento de Régimen Académico Estudiantil.
+- El plagio se sancionará según el Reglamento de Orden y Disciplina Estudiantil.
+- Se utilizarán al menos dos lecturas en inglés.
+- Las fechas del cronograma están sujetas a cambios según el avance del curso.
+Docentes:
+Sede del Atlántico, Recinto de Guápiles:
+- Grupo 31: Mag. Wilber Rodríguez Recinos (wilber.rodriguezrecinos@ucr.ac.cr)  
+  Horarios: K 13:00–15:50, V 13:00–15:50, K 16:00–19:00
+
+Sede del Atlántico, Recinto de Turrialba:
+- Grupo 01: Mag. Marco Guevara Villalobos (marco.guevaravillalobos@ucr.ac.cr)  
+  Horarios: K 17:00–18:50, J 17:00–20:50, K 15:00–17:00, K 19:00–20:00
+
+Sede de Guanacaste, Recinto de Liberia:
+- Grupo 01: Lic. Iván Chavarría Cubero (ivan.chavarriacubero@ucr.ac.cr)  
+  Horarios: L 13:00–15:50, J 13:00–15:50
+
+Sede del Pacífico:
+- Grupo 01: Mag. Mario Alberto Jiménez (mario.jimenezespinoza@ucr.ac.cr)  
+  Horarios: M 08:00–11:50, V 08:00–09:50, V 14:00–17:00  
+- Grupo 02: Mag. Mario Alberto Jiménez  
+  Horarios: M 13:00–16:50, V 10:00–11:50, V 17:00–20:00
+
+Sede del Sur:
+- Grupo 01: M.Sc. Karla Marietha Mayorga Brenes (karla.mayorga@ucr.ac.cr)  
+  Horarios: M 18:00–20:50, V 18:00–20:50, J 18:00–21:00
+Cronograma resumido:
+Semana 01 (10–16 MAR): Introducción y análisis de conceptos  
+Semana 02 (17–23 MAR): Aspectos de comunicación  
+Semana 03 (24–30 MAR): Relación humano-máquina  
+Semana 04 (31 MAR–06 ABR): Relación humano-máquina  
+Semana 05 (07–13 ABR): Percepción y cognición – Lectura 1  
+Semana 06 (14–20 ABR): Semana Santa  
+Semana 07 (21–27 ABR): Percepción y cognición – Semana Universitaria  
+Semana 08 (28 ABR–04 MAY): Diseño de interfaces – Inicio investigación personal  
+Semana 09 (05–11 MAY): Diseño de interactividad  
+Semana 10 (12–18 MAY): Interactividad, usabilidad  
+Semana 11 (19–25 MAY): Imágenes – Proyecto personal  
+Semana 12 (26 MAY–01 JUN): Sonido – Lectura 2  
+Semana 13 (02–08 JUN): Animaciones – Inicio del proyecto  
+Semana 14 (09–15 JUN): Edición de video  
+Semana 15 (16–22 JUN): Modelado 3D  
+Semana 16 (23–29 JUN): Modelado 3D  
+Semana 17 (30 JUN–06 JUL): Proyecto final  
+Semana 18 (07–12 JUL): Ampliación y cierre de actas
+Acreditación:
+La Carrera Bachillerato en Informática Empresarial está acreditada por SINAES del 10 de diciembre del 2019 al 3 de diciembre del 2023 (Acuerdo CNA-400-2019).
+Referencias obligatorias:
+- Carvajal, F. (2017). Selección, instalación, configuración y administración de los servidores multimedia. Editorial CEP.
+- Centro de Investigación de Estudios de la Mujer, UCR. (2021). Video sobre hostigamiento sexual. https://youtu.be/dzKMV8FNpks
+- Domínguez, A. et al. (2017). Curso práctico Unity 2017.x. Rama Editorial.
+- Domínguez, F. et al. (2014). Programación multimedia y dispositivos móviles. Rama Editorial.
+- Fernández, P. (2021). Accesibilidad web, diseño de aplicaciones. Rama Editorial.
+- Garrett, J. J. (2011). The elements of user experience. New Riders.
+- Hartson, R. & Pyla, P. (2012). Bright ideas for UX designers. Userfocus.
+- Hodgson, P. et al. (2012). The UX book. Morgan Kaufmann.
+- Stull, E. (2018). UX fundamentals for non-UX professionals. Apress.
+Referencias secundarias:
+- Costello, V. (2017). Multimedia foundations. Taylor & Francis.
+- Mayer, R. E. (2014). The Cambridge Handbook of Multimedia Learning. Cambridge University Press.

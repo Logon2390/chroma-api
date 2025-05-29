@@ -1,0 +1,102 @@
+Curso: Planificación Informática
+
+Código: IF8201
+Nombre completo: Planificación Informática
+Tipo de curso: Teórico, Práctico
+Créditos: 4
+Horas lectivas por semana: 6
+Requisitos: IF-7201 Gestión de Proyectos
+Correquisitos: Ninguno
+Ubicación en el plan de estudios: VIII Ciclo
+Suficiencia: No
+
+Modalidad por sede y recinto:
+- Atlántico, Guápiles: Presencial
+- Atlántico, Turrialba: Presencial
+
+Descripción del curso:
+Este curso proporciona los conceptos básicos que requieren los estudiantes para el análisis y desarrollo de la planificación estratégica en empresas, enfocándose especialmente en el área de Tecnologías de Información (TI). Se abordan temas como alineamiento estratégico, selección de proyectos TI, presupuestación y elaboración de planes de contingencia.
+
+Objetivo general:
+Introducir los conceptos fundamentales de planificación organizacional y estratégica informática, así como la relación entre ambas. Se abordan planes de contingencia TI, presupuestos, selección de proyectos y su implementación.
+
+Objetivos específicos:
+- Fundamentos de la planificación estratégica organizacional y de TI.
+- Importancia del alineamiento estratégico.
+- Métodos para evaluación y selección de proyectos TI.
+- Planificación de recursos informáticos.
+- Componentes de un plan informático.
+- Fases de los planes de contingencia.
+- Diseño de estructuras organizativas para TI.
+
+Contenidos del curso:
+
+Parte 1: Planificación Estratégica de las Organizaciones
+1. Naturaleza y propósito de la planificación.
+2. Tipos de planes, pasos, instrumentos de análisis.
+3. Análisis del entorno y sector industrial.
+4. Desarrollo de: visión, misión, estrategia genérica, objetivos, metas, estrategias.
+5. Análisis FODAR y administración de riesgos.
+6. Planeación estratégica organizacional e informática.
+
+Parte 2: Planificación Estratégica de la Función Informática
+1. Metodología para la elaboración del plan informático.
+2. Diagnóstico de la función TI y tendencias.
+3. Visión, misión y objetivos futuros en TIC.
+4. Alineamiento estratégico y modelos como Henderson y Venkatraman.
+5. Factores críticos de éxito.
+6. Selección de proyectos TI.
+7. Plan maestro informático.
+8. Diseño organizacional: estructuras, roles, calidad (incluye ISO 9001/2000).
+9. Planes de contingencia: antes, durante, después.
+
+Metodología:
+El curso se desarrolla mediante clases magistrales y prácticas. Los estudiantes desarrollan un proyecto integral de planificación estratégica de TI a lo largo del ciclo.
+
+Evaluación:
+- Examen Parcial 1: 20%
+- Examen Parcial 2: 20%
+- Quices, tareas, casos, investigación: 30%
+- Proyecto final: 30%
+
+Consideraciones sobre la evaluación:
+- Uso de la plataforma Mediación Virtual y/o Teams.
+- Comunicación oficial vía correo institucional UCR.
+- Evaluaciones notificadas con al menos 5 días hábiles.
+- Lecturas obligatorias incluyen textos en inglés.
+
+Docentes:
+
+Sede Atlántico – Recinto Turrialba
+Nombre: MSc. Jerson Ramos Arias
+Correo: jerson.ramos@ucr.ac.cr
+Horario de clases: K 14:00-16:50, J 13:00-15:50
+Consulta: M 09:00-12:00
+
+Sede Atlántico – Recinto Guápiles
+Nombre: Mag. Kenneth Pereira Hernández
+Correo: kenneth.pereira@ucr.ac.cr
+Horario de clases: S 08:00-11:50, S 13:00-14:50
+Consulta: S 15:00-18:00
+
+Cronograma resumido:
+Semana 01: Introducción y video educativo.
+Semanas 02–03: Parte 1 – Planeación organizacional.
+Semanas 04–14: Parte 2 – Planeación TI.
+Semana 09: Examen Parcial I.
+Semana 15–16: Presentación de proyectos.
+Semana 17: Examen Parcial II.
+
+Acreditación:
+El Bachillerato en Informática Empresarial está acreditado por SINAES del 10 de diciembre de 2019 al 3 de diciembre de 2023.
+
+Referencias obligatorias:
+- David, F. R. (2017). Conceptos de administración estratégica. Pearson.
+- Chain, S., Sapag Chain, R. (2014). Preparación y evaluación de proyectos.
+- Thompson, A. et al. (2018). Administración estratégica: Teoría y casos.
+- Video del CIE de la Mujer UCR (2023): https://youtu.be/OiUyqC8qrnI
+
+Referencias secundarias:
+- Gitman, L. J., Zutter, C. J. (2012). Principios de administración financiera.
+- Henderson, J. C., Venkatraman, N. (2017). Strategic Alignment Model.
+- Terán, D. (2015). Administración estratégica de la función informática.

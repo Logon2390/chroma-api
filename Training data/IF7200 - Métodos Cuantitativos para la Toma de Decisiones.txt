@@ -1,0 +1,107 @@
+Curso: Métodos Cuantitativos para la Toma de Decisiones
+
+Código: IF7200
+Nombre completo: Métodos Cuantitativos para la Toma de Decisiones
+Tipo de curso: Teórico - Práctico
+Créditos: 4
+Horas lectivas por semana: 6
+Requisitos: IF6200 Economía de la Computación
+Correquisitos: Ninguno
+Ubicación en el plan de estudios: V Ciclo
+Suficiencia: No
+Tutoría: No
+
+Modalidad por sede y recinto:
+- Atlántico, Guápiles: Presencial
+- Atlántico, Paraíso: Presencial
+- Atlántico, Turrialba: Presencial
+- Caribe, Limón: Presencial
+- Caribe, Siquirres: Presencial
+- Guanacaste, Liberia: Presencial
+- Occidente, Grecia: Bimodal
+- Occidente, San Ramón: Bimodal
+- Pacífico, Puntarenas: Bimodal
+- Sur, Golfito: Presencial
+
+Descripción del curso:
+Este curso destaca la importancia del análisis cuantitativo para la toma de decisiones en el área informática. Desarrolla destrezas en el uso de herramientas y modelos matemáticos fundamentales como: modelación, programación lineal, teoría de colas, árboles de decisión, simulación, análisis de decisiones y más.
+
+Objetivo general:
+Desarrollar la capacidad analítica cuantitativa en los estudiantes para la toma de decisiones en empresas mediante diversos instrumentos y técnicas.
+
+Objetivos específicos:
+- Comprender los supuestos y limitaciones de modelos matemáticos en contextos empresariales.
+- Promover decisiones óptimas en las organizaciones considerando costos y beneficios.
+- Aplicar métodos cuantitativos en procesos de decisión.
+- Familiarizar al estudiante con el uso de planillas de cálculo y software especializado.
+
+Contenidos del curso:
+1. Introducción al análisis cuantitativo
+2. Análisis de decisión
+3. Pronósticos
+4. Modelos de control de inventarios
+5. Programación lineal
+6. Método Simplex
+7. Modelos de transporte y asignación
+8. Programación entera, por metas y no lineal
+9. Modelos de redes
+10. Modelos de filas de espera y teoría de colas
+11. Simulación
+12. Análisis Markov
+13. Control estadístico de calidad
+
+Metodología:
+El curso se imparte según la modalidad definida por la unidad académica. Se utilizan plataformas como Mediación Virtual y Teams para la interacción, presentación de trabajos y evaluaciones. Se promueve la participación activa, trabajos en grupo, foros, y resolución de casos para aplicar conceptos. El compromiso del estudiantado es clave.
+
+Evaluación:
+- Examen Parcial 1: 20%
+- Examen Parcial 2: 15%
+- Examen Parcial 3: 15%
+- Tareas (mínimo 2): 20%
+- Trabajo de investigación: 20%
+- Exámenes cortos (mínimo 2): 10%
+
+Consideraciones sobre la evaluación:
+- Evaluaciones serán comunicadas al menos 5 días hábiles antes.
+- En caso de ausencia, se aplica el Reglamento de Régimen Académico Estudiantil.
+- El plagio será sancionado según el Reglamento de Orden y Disciplina Estudiantil.
+- Se usarán al menos dos lecturas en inglés.
+- Las fechas del cronograma pueden ajustarse según el avance del curso.
+
+Docentes por sede y grupo:
+- Yorleny Umaña Ávila (Guápiles) - yorleny15@gmail.com
+- Jonathan Fernández González (Paraíso) - jonathan.fernandezg@ucr.ac.cr
+- Graciela Pérez Araya (Turrialba) - graciela.perez@ucr.ac.cr
+- Deiler Calvo Matamoros (Siquirres) - deiler.calvo@ucr.ac.cr
+- Luis Alonso Delgado Lobo (Liberia) - luis.delgadolobo@ucr.ac.cr
+- Iyubanit Rodríguez Ramírez (Grecia) - iyubanit.rodriguezramirez@ucr.ac.cr
+- Juan Carlos Ramírez González (San Ramón) - juanramirez24@ucr.ac.cr
+- Max Carranza Arce (Pacífico) - max.carranza@ucr.ac.cr
+- Byron Espinoza Monge (Sur) - byron.espinozamonge@ucr.ac.cr
+
+Cronograma resumido:
+Semana 1: Introducción y video institucional
+Semana 2–3: Análisis de decisión, pronósticos
+Semana 4–5: Inventarios, programación lineal (Examen 1)
+Semana 6: Semana Santa
+Semana 7–8: Programación entera, metas y no lineal
+Semana 10–11: Transporte y asignación (Lectura inglés II)
+Semana 12–13: Redes, colas (Examen 2)
+Semana 14–15: Simulación, Análisis Markov
+Semana 16–17: Investigación y Examen 3
+Semana 18: Examen de ampliación
+
+Acreditación:
+La carrera de Bachillerato en Informática Empresarial está acreditada por SINAES del 10 de diciembre de 2019 al 3 de diciembre de 2023.
+
+Referencias obligatorias:
+- Render, B., Stair, R. M., & Hanna, M. E. (2016). Métodos cuantitativos para los negocios (12.ª ed.). Pearson.
+- Centro de Investigación de Estudios de la Mujer, UCR. (2021). ¿Querés conocer acerca del hostigamiento sexual y la reforma al reglamento de la UCR? https://youtu.be/dzKMV8FNpks
+
+Referencias secundarias:
+- Anderson et al. (2016). Métodos cuantitativos para los negocios (13.ª ed.)
+- Bonini, Hausman, & Biernan (2000). Análisis cuantitativos para los negocios
+- Eppen, G. D. (2000). Investigación de operaciones en la ciencia administrativa
+- Frederick, H. (2008). Métodos cuantitativos para la administración
+- Hillier, F. (2010). Introducción a la investigación de operaciones
+- Taha, H. A. (2017). Investigación de operaciones

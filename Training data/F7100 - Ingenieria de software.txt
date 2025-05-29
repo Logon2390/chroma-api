@@ -1,0 +1,168 @@
+Curso:
+IF7100 - INGENIERÍA DE SOFTWARE
+
+Código:
+IF7100
+
+Nombre completo:
+Ingeniería de Software
+
+Tipo de curso:
+Teórico - práctico
+
+Créditos:
+4
+
+Horas lectivas por semana:
+6
+
+Requisitos:
+IF6100 Análisis y Diseño de Sistemas
+
+Correquisitos:
+Ninguno
+
+Ubicación en el plan de estudios:
+VII Ciclo
+
+Suficiencia:
+No
+
+Tutoría: 
+No
+
+Modalidad por sede y recinto:
+- Atlántico / Guápiles: Presencial
+- Atlántico / Paraíso: Presencial
+- Atlántico / Turrialba: Presencial
+- Caribe / Limón: Presencial
+- Caribe / Siquirres: Presencial
+- Guanacaste / Liberia: Presencial
+- Occidente / Grecia: Bimodal
+- Occidente / San Ramón: Bimodal
+- Pacífico: Virtual
+- Sur: Presencial
+
+Descripción del curso:
+Este curso proporciona a la persona estudiante conocimientos sobre conceptos, métodos, metodologías y herramientas de la ingeniería de software empleadas en el diseño, desarrollo, pruebas, operación y mantenimiento de productos de software. Se pone énfasis en el modelado arquitectónico, herramientas CASE, gestión de calidad y aplicación práctica mediante un proyecto.
+
+Objetivo general:
+Adquirir una visión integral de los procesos de la ingeniería de software y desarrollar habilidades y buenas prácticas para producir software de alta calidad.
+
+Objetivos específicos:
+- Reconocer el carácter transdisciplinario de la ingeniería de software.
+- Proponer modelos de diseño y arquitectura de software.
+- Implementar productos de software según diseño y arquitectura.
+- Integrar productos y módulos en proyectos reales.
+- Diseñar estrategias de pruebas adecuadas.
+- Administrar procesos de implantación y configuración.
+- Emplear herramientas CASE modernas.
+- Adoptar una actitud crítica ante los temas del área.
+
+Contenidos del curso:
+1. Introducción a la Ingeniería de Software  
+2. Requerimientos de Software  
+3. Documentación y modelado de procesos  
+4. Diseño de Software  
+5. Arquitectura del Software  
+6. Patrones de Diseño  
+7. Construcción de Software  
+8. Gestión de Calidad del Producto  
+9. Pruebas del Software  
+10. Implantación  
+11. Mantenimiento del Software  
+12. Gestión de Ingeniería de Software  
+13. Administración de la Configuración del Software  
+14. Metodologías de Desarrollo del Software  
+
+Metodología:
+- Clases teórico-prácticas con soporte en diapositivas, plantillas, ejercicios.
+- Entorno de Mediación Virtual y/o TEAMS.
+- Proyecto gestionado con metodologías ágiles.
+- Investigaciones prácticas sobre herramientas CASE.
+- Casos de estudio sincrónicos y asincrónicos.
+- Seguimiento por medios virtuales en grupos bimodales y virtuales.
+
+Evaluación:
+- Parcial I: 20%
+- Parcial II: 20%
+- Evaluaciones cortas, casos y tareas: 10%
+- Proyecto: 40%
+- Investigación: 10%
+
+Consideraciones sobre la evaluación:
+- Evaluaciones y materiales mediante Mediación Virtual.
+- Comunicación oficial por correo institucional.
+- Restricciones sobre dispositivos electrónicos durante evaluaciones.
+- Criterios de calificación definidos en cada evaluación.
+- Anuncio de evaluaciones con 5 días de anticipación.
+- Política de ausencias y plagio según reglamentos institucionales.
+- Uso de IA generativa debe ser referenciado.
+- Uso de lecturas en inglés obligatorio, presentación en español.
+- Cronograma sujeto a cambios.
+
+Docentes:
+- Guápiles: Lic. Geber Arturo Guillén Berrocal – geber.guillen@ucr.ac.cr
+- Paraíso: MSc. José Leonardo Camacho Navarro – jose.camacho@ucr.ac.cr
+- Turrialba: Mag. Juan José Quesada Sánchez – juanjose.quesada@ucr.ac.cr
+- Limón: Msc. Carlos Morales Castro – carlos.moralescastro@ucr.ac.cr
+- Siquirres: Lic. Delia Smith Paul – delia.smith@ucr.ac.cr
+- Liberia: Lic. Iván Chavarría Cubero – ivan.chavarriacubero@ucr.ac.cr
+- Grecia: MAP Verny Fernandez Castro – verny.fernandez@ucr.ac.cr
+- San Ramón: M.Ci. Dennis González Herrera – dennis.gonzalez@ucr.ac.cr
+- Pacífico: MGT. Raquel Porras Soto – raquel.porrassoto@ucr.ac.cr
+- Sur: Msc. María José Peralta Varela – maria.peraltavarela@ucr.ac.cr
+
+Cronograma resumido:
+- Sem 01: Introducción y presentación del curso  
+- Sem 02: Modelado de procesos y metodologías  
+- Sem 03–04: Requerimientos de software  
+- Sem 05: Diseño de software  
+- Sem 06: Semana Santa  
+- Sem 07: Continuación diseño de software  
+- Sem 08: Arquitectura del software  
+- Sem 09: Parcial I y construcción de software  
+- Sem 10: Patrones de diseño  
+- Sem 11: Gestión de calidad  
+- Sem 12: Pruebas del software  
+- Sem 13: Implantación  
+- Sem 14: Mantenimiento del software  
+- Sem 15: Gestión de ingeniería  
+- Sem 16: Configuración del software, defensa del proyecto, Parcial II  
+- Sem 17: Defensa final  
+- Sem 18: Examen de ampliación
+
+Acreditación:
+La carrera Bachillerato en Informática Empresarial está acreditada por SINAES del 10 de diciembre del 2019 al 3 de diciembre del 2023.
+
+Referencias obligatorias:
+- Baumgartner et al. (2021). Agile testing. Springer.  
+- Brown, S. (2019). Software architecture for developers. Leanpub.  
+- Centro de Investigación de Estudios de la Mujer, UCR. (2021). [YouTube]  
+- Ford & Richards (2020). Fundamentals of software architecture. O'Reilly.  
+- Gandhi et al. (2024). Head first software architecture. O'Reilly.  
+- Pressman & Maxin (2020). Software engineering. McGraw Hill.  
+- Roth, S. (2021). Clean C++20. Apress.  
+- SEI. (2019). Publications. SEI.  
+- Sommerville, I. (2019). Software engineering. Pearson.
+
+Referencias secundarias:
+- Bibik, I. (2018). How to kill the scrum monster. Apress.  
+- Bourque & Fairley (2014). SWEBOK. IEEE.  
+- Bryant & Marín-Pérez (2019). Continuous delivery in Java. O’Reilly.  
+- Davis & Daniels (2016). Effective DevOps. O’Reilly.  
+- de la Torre Llorente et al. (2010). Guía de arquitectura N-capas. Microsoft.  
+- Ford et al. (2021). Software architecture: The hard parts. O'Reilly.  
+- Joshi, B. (2016). SOLID for ASP.NET. Springer.  
+- Kazman & Cervantes (2016). Designing software architectures. Pearson.  
+- Khorikov, V. (2020). Unit testing. Manning.  
+- Lewis, W. E. (2017). Software testing and continuous quality. Auerbach.  
+- Martin, R. C. (2009). Clean Code. Pearson.  
+- Paradkar, S. (2017). Mastering non-functional requirements. Packt.  
+- Pylayeva, D. (2017). Introduction to DevOps. Apress.  
+- Ritter, F. (2014). Foundations for user-centered systems. Springer.  
+- Rubin, K. S. (2012). Essential Scrum. Addison-Wesley.  
+- Stull, E. (2018). UX fundamentals. Apress.  
+- Troelsen & Japikse (2022). Pro C# 10 with .NET 6. Springer.  
+- Whitesell et al. (2022). Pro microservices in .NET 6. Springer.  
+- Winters et al. (2022). Ingeniería de software en Google. Marcombo.

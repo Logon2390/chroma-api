@@ -23,8 +23,8 @@ UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 CHROMA_DB_DIR = os.getenv("CHROMA_DB_DIR", "./chroma_db")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
 
-# Optional AI provider settings
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", None)
+# Split by headers
+CHUNK_HEADERS = os.getenv("CHUNK_HEADERS", "").split(",")
 
 # Get all config as dictionary
 def get_settings() -> Dict[str, Any]:
@@ -40,5 +40,10 @@ def get_settings() -> Dict[str, Any]:
         "vector_store": {
             "db_dir": CHROMA_DB_DIR,
             "embedding_model": EMBEDDING_MODEL,
-        }
+        },
+        "chunk_processing": {
+            "chunk_size": CHUNK_SIZE,
+            "chunk_overlap": CHUNK_OVERLAP,
+            "headers": CHUNK_HEADERS,
+        },
     } 

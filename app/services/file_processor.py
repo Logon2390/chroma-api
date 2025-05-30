@@ -24,7 +24,7 @@ class FileProcessor:
         self.upload_dir = Path(UPLOAD_DIR)
         self.upload_dir.mkdir(parents=True, exist_ok=True)
         self.chunk_processor = ChunkProcessor()
-        self.chunk_sender = ExternalChunkSender("http://localhost:9000/api/v1/store")
+        self.chunk_sender = ExternalChunkSender("http://dbchroma:9000/api/v1/store")
         # Initialize extractors
         self.extractors: List[BaseExtractor] = [
             PDFExtractor(),

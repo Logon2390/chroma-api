@@ -3,8 +3,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from app.api.v1.routes import router as api_v1_router
-from app.core.config import API_HOST, API_PORT, get_settings
+from api.v1.routes import router as api_v1_router
+from core.config import API_HOST, API_PORT, get_settings
 
 # Create FastAPI application
 app = FastAPI(
